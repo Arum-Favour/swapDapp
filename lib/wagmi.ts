@@ -1,0 +1,11 @@
+import { createConfig, http } from "wagmi";
+import { mainnet } from "viem/chains";
+import { metaMask } from "@wagmi/connectors";
+
+export const config = createConfig({
+    chains: [mainnet],
+    connectors: [metaMask()],
+    transports: {
+        [mainnet.id]: http(),
+    },
+});
